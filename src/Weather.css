@@ -1,0 +1,50 @@
+.Weather {
+  border: 1px solid rgb(205, 206, 211);
+  border-radius: 5px;
+  background-color: rgb(20, 129, 129);
+  color: azure;
+  padding: 10px;
+  margin: 30px auto;
+  text-align: center;
+  margin-bottom: 1px;
+}
+.time {
+  list-style: none;
+  text-align: left;
+}
+.weatherData {
+  list-style: none;
+}
+.btn {
+  font-size: 14px;
+}
+.Weather h3 {
+  margin-left: 40px;
+  font-size: 40px;
+}
+
+.Weather p {
+  position: relative;
+  left: 40px;
+}
+.Weather img {
+  position: relative;
+  top: -50px;
+  margin-bottom: 0px;
+}
+.Weather .Temp {
+  font-size: 80px;
+  margin: 0auto;
+}
+.degree {
+  font-weight: lighter;
+  font-size: 40px;
+  position: relative;
+  top: -35px;
+}
+.Weather .central {
+  margin-bottom: -60px;
+}
+.iconImage {
+  margin: 0px;
+}
