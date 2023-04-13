@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import axios from "axios";
 import Forecast from "./Forecast";
-import FormatDate from "./FormatDate";
 
 import "./Weather.css";
+import Weatherinfo from "./Weatherinfo";
 
 export default function Weather() {
   const [city, setCity] = useState("");
@@ -57,9 +57,7 @@ export default function Weather() {
       <div className="Weather">
         {form}
         <h3 className="text-start">City</h3>
-        <p className="time">
-          <FormatDate />
-        </p>
+        <p className="time"></p>
         <div>
           <div className="Temp">°</div>
           <img src={weatherdata.icon} alt={weatherdata.description} />
@@ -68,7 +66,6 @@ export default function Weather() {
           <span>Wind:? m/h</span>
           <span> Humidity:?%</span>
         </div>
-
         <Forecast />
       </div>
     );
@@ -77,28 +74,8 @@ export default function Weather() {
       <div className="Weather">
         {form}
         <h3 className="text-capitalize text-start">{city}</h3>
-        <p className="time">
-          <FormatDate date={weatherdata.date} />
-        </p>
-        <div className="central">
-          <h2 className="Temp">
-            {weatherdata.temp}
-            <spam className="degree">°</spam>
-          </h2>
-          <img
-            src={weatherdata.icon}
-            alt={weatherdata.description}
-            className="iconImage"
-            width={180}
-          />
-        </div>
-        <div className="text-capitalize">
-          <strong>{weatherdata.description}</strong>
-        </div>
-        <div className="weatherData">
-          <span>Wind: {weatherdata.wind} m/h</span>
-          <span> Humidity: {weatherdata.humidity}%</span>
-        </div>
+        <Weatherinfo data={weatherdata} />
+
         <Forecast />
       </div>
     );
