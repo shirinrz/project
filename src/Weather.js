@@ -12,6 +12,7 @@ export default function Weather() {
   const [weatherdata, setWeatherdata] = useState({ loaded: false });
 
   function showWeather(response) {
+    console.log(response.data);
     setWeatherdata({
       loaded: true,
       date: new Date(response.data.dt * 1000),
@@ -19,7 +20,7 @@ export default function Weather() {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
-      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
     });
   }
   function handlesubmit(event) {
@@ -57,11 +58,11 @@ export default function Weather() {
       <div className="Weather">
         {form}
         <h3 className="text-start">City</h3>
-        <p className="time"></p>
+        <p className="time">Loading...</p>
         <div>
-          <div className="Temp">°</div>
-          <img src={weatherdata.icon} alt={weatherdata.description} />
+          <div className="Temp fs-6">Loading...°</div>
         </div>
+
         <div className="weatherData">
           <span>Wind:? m/h</span>
           <span> Humidity:?%</span>
