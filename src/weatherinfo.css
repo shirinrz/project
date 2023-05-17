@@ -4,11 +4,6 @@
   margin-left: 80px;
   margin-right: 80px;
 }
-.weatherIcone canvas {
-  position: relative;
-  top: -50px;
-  margin-bottom: 0px;
-}
 
 .describe {
   margin-top: 30px;

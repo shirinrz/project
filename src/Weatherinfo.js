@@ -10,6 +10,7 @@ export default function Weatherinfo(props) {
       <p className="time">
         <FormatDate date={props.data.date} />
       </p>
+
       <div className="central">
         <Temperature celsius={props.data.temp} />
 
@@ -18,13 +19,16 @@ export default function Weatherinfo(props) {
       <div className="text-capitalize mb-2 describe">
         <strong>{props.data.description}</strong>
       </div>
+
       <div class="container text-center mb-2">
-        <div className="weatherData row justify-content-center">
-          <div className="col-5">
-            Wind: <strong>{props.data.wind} m/h </strong>
-          </div>
-          <div className="col-5">
-            Humidity: <strong>{props.data.humidity}%</strong>
+        <div className="row">
+          <div className="weatherData row justify-content-center col-8">
+            <div className="col-5">
+              Wind: <strong>{props.data.wind} m/h </strong>
+            </div>
+            <div className="col-5">
+              Humidity: <strong>{props.data.humidity}%</strong>
+            </div>
           </div>
         </div>
       </div>
