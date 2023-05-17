@@ -12,11 +12,10 @@ export default function Weatherinfo(props) {
       </p>
       <div className="central">
         <Temperature celsius={props.data.temp} />
-        <div className="WeatherIcone">
-          <WeatherIcon code={props.data.icon} />
-        </div>
+
+        <WeatherIcon code={props.data.icon} />
       </div>
-      <div className="text-capitalize mb-2">
+      <div className="text-capitalize mb-2 describe">
         <strong>{props.data.description}</strong>
       </div>
       <div class="container text-center mb-2">

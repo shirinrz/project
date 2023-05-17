@@ -62,7 +62,7 @@ export default function Weather() {
         <div>
           <div className="Temp fs-6">Loading...°</div>
         </div>
-
+        <img src="" alt="icon"></img>
         <div className="weatherData">
           <span>Wind:? m/h</span>
           <span> Humidity:?%</span>
