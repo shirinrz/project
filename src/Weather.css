@@ -27,12 +27,7 @@
   position: relative;
   left: 40px;
 }
-.Weather canvas {
-  position: relative;
-  top: -50px;
-  margin-bottom: 0px;
-  margin-top: 40px;
-}
+
 .Weather .Temp {
   font-size: 80px;
   margin: 0auto;

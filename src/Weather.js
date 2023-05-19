@@ -21,6 +21,8 @@ export default function Weather() {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       icon: response.data.weather[0].icon,
+      coordinates: response.data.coord,
+      twon: response.data.name,
     });
   }
   function handlesubmit(event) {
@@ -67,17 +69,16 @@ export default function Weather() {
           <span>Wind:? m/h</span>
           <span> Humidity:?%</span>
         </div>
-        <Forecast />
       </div>
     );
   } else {
     return (
       <div className="Weather">
         {form}
-        <h3 className="text-capitalize text-start">{city}</h3>
+        <h3 className="text-capitalize text-start">{weatherdata.twon}</h3>
         <Weatherinfo data={weatherdata} />
 
-        <Forecast />
+        <Forecast coords={weatherdata.coordinates} />
       </div>
     );
   }

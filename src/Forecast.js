@@ -1,73 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import "./Forecast.css";
+import axios from "axios";
+import DailyData from "./DailyData";
 
-export default function Forecast() {
-  return (
-    <div className="Forecast">
-      <div className="container cadrForcast">
-        <div className="row mt-5 mb-2">
-          <div className="col-2">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/9755/9755279.png"
-              alt="icon"
-              width="50px"
-            ></img>
-            <br />
-            Mon
-          </div>
-          <div className="col-2">
-            {" "}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/8841/8841317.png"
-              alt="icon"
-              width="50px"
-            ></img>
-            <br />
-            Thu
-          </div>
-          <div className="col-2">
-            {" "}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png"
-              alt="icon"
-              width="50px"
-            ></img>
-            <br />
-            Wed
-          </div>
-          <div className="col-2">
-            {" "}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/9755/9755279.png"
-              alt="icon"
-              width="50px"
-            ></img>
-            <br />
-            Thr
-          </div>
-          <div className="col-2">
-            {" "}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/9755/9755273.png"
-              alt="icon"
-              width="50px"
-            ></img>
-            <br />
-            Fri
-          </div>
-          <div className="col-2">
-            {" "}
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png"
-              alt="icon"
-              width="50px"
-            ></img>
-            <br />
-            Sat
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+export default function Forecast(props) {
+  const [loaded, setLoaded] = useState(false);
+  const [forecastTemp, setForecastTemp] = useState(null);
+
+  function handleResponse(response) {
+    console.log(response);
+    setForecastTemp(response.data);
+    setLoaded(true);
+  }
+
+  if (loaded) {
+    console.log(forecastTemp);
+    return <DailyData dailyData={forecastTemp} />;
+  } else {
+    let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let longitude = props.coords.lon;
+    let latitude = props.coords.lat;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+  }
 }

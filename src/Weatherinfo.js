@@ -11,12 +11,15 @@ export default function Weatherinfo(props) {
         <FormatDate date={props.data.date} />
       </p>
 
-      <div className="central">
+      <div className="temp">
         <Temperature celsius={props.data.temp} />
-
-        <WeatherIcon code={props.data.icon} />
       </div>
-      <div className="text-capitalize mb-2 describe">
+
+      <div className="icon">
+        <WeatherIcon code={props.data.icon} size={120} />
+      </div>
+
+      <div className="text-capitalize describe">
         <strong>{props.data.description}</strong>
       </div>
 
