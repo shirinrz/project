@@ -1,9 +1,12 @@
 .Forecast {
-  border: 1px solid rgb(234, 238, 243);
+  border: 1px solid rgb(197, 212, 230);
   border-radius: 5px;
   margin: 2px;
 }
 
 .forecast-days {
   margin-bottom: 4px;
+}
+.min-tem {
+  margin-left: 6px;
 }

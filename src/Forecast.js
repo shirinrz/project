@@ -8,14 +8,26 @@ export default function Forecast(props) {
   const [forecastTemp, setForecastTemp] = useState(null);
 
   function handleResponse(response) {
-    console.log(response);
-    setForecastTemp(response.data);
+    setForecastTemp(response.data.daily);
     setLoaded(true);
   }
 
   if (loaded) {
-    console.log(forecastTemp);
-    return <DailyData dailyData={forecastTemp} />;
+    return (
+      <div className="container cadrForcast">
+        <div className="row mt-2 mb-2">
+          {forecastTemp.map(function (dailyforecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <DailyData dailyData={dailyforecast} />
+                </div>
+              );
+            }
+          })}
+        </div>
+      </div>
+    );
   } else {
     let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
     let longitude = props.coords.lon;
