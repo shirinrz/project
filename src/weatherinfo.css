@@ -1,9 +1,17 @@
 .weatherData {
-  border: 1px solid rgb(197, 202, 206);
+  border: 1px solid #f9ffff;
   opacity: 80%;
   margin-left: 80px;
   margin-right: 80px;
+  color: #f9ffff;
+  border-radius: 4px;
 }
 .temp {
   margin-top: -70px;
+  color: #ffb968;
+}
+.describe {
+  color: #ffb968;
+  margin-bottom: 5px;
+  font-size: 22px;
 }

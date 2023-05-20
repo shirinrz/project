@@ -1,8 +1,8 @@
 .Weather {
-  border: 1px solid rgb(205, 206, 211);
+  border: 1px solid #ffb968;
   border-radius: 5px;
-  background-color: rgb(66, 199, 199);
-  color: azure;
+  background-color: #052f48;
+  color: #d9fbff;
   padding: 10px;
   margin: 30px auto;
   text-align: center;
@@ -15,12 +15,22 @@
 .weatherData {
   list-style: none;
 }
-.btn {
+button {
   font-size: 14px;
+  color: #ffb968;
+  background-color: #d9fbff;
+  border: #052f48;
+  border-radius: 3px;
+  padding: 9px;
+  font-size: 14px;
+  font-weight: bold;
 }
 .Weather h3 {
   margin-left: 40px;
   font-size: 40px;
+}
+.city {
+  color: #ffb968;
 }
 
 .Weather p {

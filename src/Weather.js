@@ -12,7 +12,6 @@ export default function Weather() {
   const [weatherdata, setWeatherdata] = useState({ loaded: false });
 
   function showWeather(response) {
-    console.log(response.data);
     setWeatherdata({
       loaded: true,
       date: new Date(response.data.dt * 1000),
@@ -48,7 +47,7 @@ export default function Weather() {
             />
           </div>
           <div className="col-sm-4">
-            <button className="btn btn-primary w-100">Search</button>
+            <button className="w-100">Search</button>
           </div>
         </div>
       </div>
@@ -64,7 +63,11 @@ export default function Weather() {
         <div>
           <div className="Temp fs-6">Loading...°</div>
         </div>
-        <img src="" alt="icon"></img>
+        <img
+          src="https://cdn2.iconfinder.com/data/icons/weather-365/64/weather-sun-cloud-rain-512.png"
+          alt="weather"
+          width={60}
+        ></img>
         <div className="weatherData">
           <span>Wind:? m/h</span>
           <span> Humidity:?%</span>
@@ -75,7 +78,7 @@ export default function Weather() {
     return (
       <div className="Weather">
         {form}
-        <h3 className="text-capitalize text-start">{weatherdata.twon}</h3>
+        <h3 className="text-capitalize text-start city">{weatherdata.twon}</h3>
         <Weatherinfo data={weatherdata} />
 
         <Forecast coords={weatherdata.coordinates} />
